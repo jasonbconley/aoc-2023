@@ -115,7 +115,7 @@ int main(void) {
   }
   fclose(fp);
 
-  int gameIdSums = 0;
+  int gamePowerSums = 0;
   for (int i=0; i<100; ++i) {
     game currGame = gameResults[i];
     int maxRed, maxGreen, maxBlue;
@@ -124,10 +124,8 @@ int main(void) {
     maxBlue = currGame.maxBlueSet.blueDraw;
 
     printf("ID #%d: Max red %d, Max green %d, Max blue %d\n", currGame.id, maxRed, maxGreen, maxBlue);
-
-    if (maxRed <= totalRed && maxGreen <= totalGreen && maxBlue <= totalBlue)
-      gameIdSums += currGame.id;
+    gamePowerSums += (maxRed * maxGreen * maxBlue);
   }
 
-  printf("The sum of the game IDs that were possible are %d\n", gameIdSums);
+  printf("The sum of game powers are %d\n", gamePowerSums);
 }

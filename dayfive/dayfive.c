@@ -63,7 +63,6 @@ int main(void) {
 	    seedLocations[sd] = seedLocations[sd] + (destStart - sourceStart);
 	    break;
 	  }
-	  //printf("%ld %ld %ld\n", destStart, sourceStart, range);
 	}
       }
     }

@@ -37,17 +37,14 @@ secondPath)));
             }
         } catch (IOException ignored) {}
 
-        System.out.println(Arrays.toString(instructions));
-        System.out.println(nodes);
-
         String currentNode = "AAA";
         int steps = 0;
         while (!currentNode.equals("ZZZ")) {
-            for (int i=0; i<instructions.length; ++i) {
+            for (int instruction : instructions) {
                 final String current = currentNode;
                 Pair<String, String> paths = nodes.stream().filter(p -> 
 p.getLeft().equalsIgnoreCase(current)).map(Pair::getRight).toList().get(0);
-                if (instructions[i] == 0) {
+                if (instruction == 0) {
                     currentNode = paths.getLeft();
                 } else {
                     currentNode = paths.getRight();
@@ -60,3 +57,4 @@ p.getLeft().equalsIgnoreCase(current)).map(Pair::getRight).toList().get(0);
 
     }
 }
+
